@@ -6,7 +6,9 @@ module.exports = {
     './src/index.js',
     './css/BadReset.css',
     './css/UserWrap.css',
-    './css/global.css'
+    './css/global.css',
+    './css/SingleUserPanel.css',
+    './css/UserTile.css'
   ],
   module: {
     rules: [

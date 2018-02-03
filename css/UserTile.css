@@ -1,0 +1,68 @@
+.user-tile {
+    position: relative;
+    width: calc(100% - 20px);
+    height: 60px;
+    left: 10px;
+    /* top: 10px; */
+    margin-top: 10px;
+
+    background-color: #eeeeee;
+    box-shadow: 0 0 5px -5px #696969;
+    border-radius: 3px;
+
+    font-family: 'lato', Arial, Helvetica, sans-serif;
+    color: #444444;
+    font-size: 1.2em;
+
+    overflow: hidden;
+}
+
+.user-risk {
+    position: relative;
+    display: block;
+    float: left;
+    height: 100%;
+    width: 140px;
+    line-height: 60px;
+    text-align: center;
+    
+    font-size: 1.5em;
+    font-weight: 500;
+}
+.user-risk.high {
+    background-color: #dd5555;
+    color: #f8c2c2;
+}
+.user-risk.medium {
+    background-color: #e47d41;
+    color: #eec1a7
+}
+.user-risk.low {
+    background-color: #217a21;
+    color: #adebad
+}
+.user-name {
+    position: relative;
+    display: block;
+    float: left;
+    height: 100%;
+    width: calc(100% - 140px);
+    line-height: 60px;
+
+    font-size: 0.95em;
+    white-space: pre;
+    font-weight: 300;
+}
+.user-name > span {
+    position: relative;
+    display: inline-block;
+}
+.user-name > span:nth-child(1) {
+    margin-left: 40px;
+}
+.user-name > span:nth-child(3) {
+    margin-left: 40px;
+}
+.user-name > span:nth-child(even) {
+    font-weight: 400;
+}

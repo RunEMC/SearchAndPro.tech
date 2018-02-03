@@ -1,9 +1,10 @@
 .user-wrap {
     position: absolute;
     height: 90vh;
-    width: calc(100vw - 10vh);
+    /* width: calc(100vw - 10vh); */
+    width: 80vw;
     top: 5vh;
-    left: 5vh;
+    right: 5vh;
 
     border: 1px solid #111111;
     background-color: #222222;
