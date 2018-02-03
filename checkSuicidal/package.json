@@ -1,0 +1,25 @@
+{
+  "name": "check-suicidal",
+  "version": "0.0.0",
+  "author": "searchandprotech <therowforce@gmail.com>",
+  "main": "functions/__main__.js",
+  "dependencies": {
+    "watson-developer-cloud": "^3.0.5"
+  },
+  "private": true,
+  "stdlib": {
+    "build": "faaslang",
+    "name": "searchandprotech/checkSuicidal",
+    "timeout": 30000,
+    "publish": true,
+    "personalize": {
+      "keys": [],
+      "user": []
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "description": ""
+}
