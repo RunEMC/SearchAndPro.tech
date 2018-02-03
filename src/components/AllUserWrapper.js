@@ -7,8 +7,7 @@ import SingleUserPanel from './SingleUserPanel.js';
 export default class AllUserWrapper extends React.Component {
     render() {
         return (
-            <div>
-                ALL USER WRAPPER
+            <div className="user-wrap">
                 <UserCategoryWrapper />
                 <SingleUserPanel />
             </div>
