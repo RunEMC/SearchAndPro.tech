@@ -1,0 +1,21 @@
+{
+  "name": "twitter-scraper",
+  "version": "0.0.0",
+  "description": "",
+  "author": "hygzhu <hygzhu@gmail.com>",
+  "main": "functions/__main__.js",
+  "dependencies": {
+    "scrape-twitter": "^0.9.0"
+  },
+  "private": true,
+  "stdlib": {
+    "build": "faaslang",
+    "name": "hygzhu/twitter-scraper",
+    "timeout": 10000,
+    "publish": true,
+    "personalize": {
+      "keys": [],
+      "user": []
+    }
+  }
+}
