@@ -6,7 +6,7 @@ import AllUserWrapper from './components/AllUserWrapper.js';
 const title = 'My Minimal React Webpackdasdsf Babel Setup';
 
 ReactDOM.render(
-  <div>{title}
+  <div>
   <AllUserWrapper />
   </div>,
   document.getElementById('app')
