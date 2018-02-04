@@ -42,6 +42,10 @@
 .trait-parent > .trait-tile > span:nth-child(1) {
     text-decoration: underline;
 }
+.trait-parent > .trait-tile > span:nth-child(1):hover {
+    cursor: pointer;
+    color: #050505;
+}
 .trait-children {
     height: auto;
     padding-left: 10px;
@@ -53,4 +57,14 @@
     visibility: hidden;
     height: 0;
     overflow: hidden;
+}
+.trait-wall h6 {
+    padding-left: 10px;
+    padding-top: 16px;
+}
+.keyword {
+    padding-left: 10px;
+    padding-top: 16px;
+    text-overflow: ellipsis;
+    margin-right: 15px;
 }

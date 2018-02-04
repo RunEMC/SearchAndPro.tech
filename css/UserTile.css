@@ -22,6 +22,10 @@
 
     overflow: hidden;
 }
+.user-tile:hover {
+    cursor: pointer;
+    background-color: #d0d0d0;
+}
 
 .user-risk {
     position: relative;
@@ -37,11 +41,11 @@
 }
 .user-risk.high {
     background-color: #dd5555;
-    color: #f8c2c2;
+    color: #fad4d4;
 }
 .user-risk.medium {
     background-color: #e47d41;
-    color: #eec1a7
+    color: #f0cdb9
 }
 .user-risk.low {
     background-color: #217a21;

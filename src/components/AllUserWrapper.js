@@ -16,12 +16,16 @@ export default class AllUserWrapper extends React.Component {
             analysis: [],
             usernames: [
                 "sad_boie",
-                // "Canucks",
-                // "RealDonaldTrump",
-                // "solaggytoday",
-                // "QuickyBaby",
-                // "h3h3production",
-                // "hilakleinh3"
+                "Canucks",
+                "RealDonaldTrump",
+                "solaggytoday",
+                "QuickyBaby",
+                "h3h3production",
+                "hilakleinh3",
+                "kawanocy",
+                "BrambossMC",
+                "CJSB__"
+
             ],
             users: [
                 { "username": "tetsuo", "risk": 95, "_id": 124623475356 },
@@ -44,7 +48,7 @@ export default class AllUserWrapper extends React.Component {
     getUserAnalysis(username) {
         if (username) {
             request
-                .get('https://searchandprotech.lib.id/checkSuicidal/')
+                .get('https://searchandprotech.lib.id/checkSuicidal@0.0.7/')
                 .query('twitterHandle=' + username)
                 .accept('json')
                 .then((res) => {
@@ -81,7 +85,7 @@ export default class AllUserWrapper extends React.Component {
 
         var user = false;
         for (var i = 0; i < this.state.analysis.length; i++) {
-            if (this.state.analysis[i].twitterHandle) {
+            if (this.state.analysis[i].twitterHandle == this.state.username) {
                 var user = this.state.analysis[i];
             }
         }
