@@ -1,18 +1,17 @@
 .user-tile {
     position: relative;
-    width: calc(100% - 20px);
+    width: calc(50% - 15px);
     height: 60px;
     left: 10px;
     /* top: 10px; */
     margin-top: 10px;
+    margin-right: 10px;
 
     background-color: #eeeeee;
     box-shadow: 0 0 5px -5px #696969;
     border-radius: 3px;
 
     font-family: 'lato', Arial, Helvetica, sans-serif;
-    color: #444444;
-    font-size: 1.2em;
 
     overflow: hidden;
 }
@@ -22,7 +21,7 @@
     display: block;
     float: left;
     height: 100%;
-    width: 140px;
+    width: 110px;
     line-height: 60px;
     text-align: center;
     
@@ -46,10 +45,10 @@
     display: block;
     float: left;
     height: 100%;
-    width: calc(100% - 140px);
+    width: calc(100% - 110px);
     line-height: 60px;
 
-    font-size: 0.95em;
+    font-size: 1.05em;
     white-space: pre;
     font-weight: 300;
 }
@@ -58,7 +57,7 @@
     display: inline-block;
 }
 .user-name > span:nth-child(1) {
-    margin-left: 40px;
+    margin-left: 20px;
 }
 .user-name > span:nth-child(2) {
     width: 200px;

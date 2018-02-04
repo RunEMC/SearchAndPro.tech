@@ -2,6 +2,7 @@
 *:before, 
 *:after {
   box-sizing: border-box;
+  white-space: pre;
 }
 body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6 pre, ul, ol, li, dl, dt dd, form, a fieldset, input, th, td {
   margin: 0;
@@ -20,8 +21,8 @@ html {
 }
 body {
   line-height: 1;
-  height: 100%;
-  width: 100%;
+  /* height: 100vh; */
+  /* width: 100vw; */
   background-color: #eecccc;
 }
 
