@@ -1,8 +1,11 @@
 import React from 'react';
+import request from 'superagent';
 
 import SingleUserFeed from './SingleUserFeed.js';
 import SingleUserMentions from './SingleUserMentions.js';
 import SingleUserActions from './SingleUserActions.js';
+
+
 
 export default class SingleUserPanel extends React.Component {
     constructor(props) {
@@ -10,6 +13,10 @@ export default class SingleUserPanel extends React.Component {
         // this.state = {
         //     hidden: true
         // }
+    }
+
+    componentDidMount() {
+
     }
 
     render() {

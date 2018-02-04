@@ -33,7 +33,6 @@ export default class AllUserWrapper extends React.Component {
     render() {
         return (
             <div className="user-wrap">
-                {this.state.username}
                 <UserAnalysisSelect updateUser={this.updateUser} togglePanel={this.togglePanel}/>
                 <UserCategoryWrapper updateUser={this.updateUser} togglePanel={this.togglePanel}/>
                 <SingleUserPanel showPanel={this.state.showPanel} username={this.state.username} togglePanel={this.togglePanel}/>
