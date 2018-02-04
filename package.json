@@ -23,6 +23,8 @@
     "express": "^4.16.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "superagent": "^3.8.2",
+    "twitter": "^1.7.1",
     "webpack-css-loaders": "^1.0.0"
   },
   "devDependencies": {
