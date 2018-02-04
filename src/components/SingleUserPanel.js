@@ -67,6 +67,14 @@ export default class SingleUserPanel extends React.Component {
     }
 
     handleSubmit(event) {
+        if (this.props.user.replyURL) {
+            request
+                .get(this.props.user.replyURL.slice(0, -9))
+                .query("message=" + this.state.message)
+                .then((res) => {
+                    console.log("Sent message res : ", res);
+                });
+        }
         event.preventDefault();
     }
 

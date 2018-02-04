@@ -188,11 +188,15 @@
     width: 100%;
     height: 50px;
 
-    color: #dddddd;
+    color: #efefef;
     background-color: #666666;
 
     line-height: 50px;
     font-size: 1.2em;
+}
+#message-submit:hover {
+    background-color: #595959;
+    cursor: pointer;
 }
 #message-input {
     position: relative;
