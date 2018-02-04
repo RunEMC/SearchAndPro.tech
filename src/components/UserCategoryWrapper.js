@@ -29,7 +29,7 @@ export default class UserCategoryWrapper extends React.Component {
         // console.log(sortedUsers);
 
         var userTiles = sortedUsers.map((user, index) =>
-            <UserTile user={user} key={index}/>
+            <UserTile user={user} key={index} updateUser={this.props.updateUser} togglePanel={this.props.togglePanel}/>
         );
 
         console.log(userTiles);

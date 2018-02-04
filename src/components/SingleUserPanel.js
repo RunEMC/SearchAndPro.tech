@@ -5,9 +5,19 @@ import SingleUserMentions from './SingleUserMentions.js';
 import SingleUserActions from './SingleUserActions.js';
 
 export default class SingleUserPanel extends React.Component {
+    constructor(props) {
+        super(props);
+        // this.state = {
+        //     hidden: true
+        // }
+    }
+
     render() {
+        var panelDisplay = this.props.showPanel ? "" : "hidden-panel"; 
+
         return (
-            <div>
+            <div class={"user-panel " + panelDisplay}>
+                <div onClick={() => {this.props.togglePanel(false)}}>Close panel</div>
                 Single User Panel
                 <SingleUserFeed />
                 <SingleUserMentions />
