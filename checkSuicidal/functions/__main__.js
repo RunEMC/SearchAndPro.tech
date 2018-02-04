@@ -200,6 +200,8 @@ module.exports = (twitterHandle, context, callback) => {
               lib[`${context.service.identifier}.getID`](twitterHandle).then(res => {
                 recipientID = res["data"]["id_str"];
                 response["twitterID"] = recipientID;
+                response["profilePic"] = res["data"]["profile_image_url"];
+                response["replyURL"] = "https://hygzhu.lib.id/twitter-message@0.0.0/?twitterID=" + recipientID + "?message=";
 
                 nlu.analyze(
                   {
@@ -223,7 +225,6 @@ module.exports = (twitterHandle, context, callback) => {
                     if (sums["sentiment"] <= emergencyLim){
                       //Automated email
                       response["sentMessage"] = "true";
-                      response["replyURL"] = "https://hygzhu.lib.id/twitter-message@0.0.0/?twitterID=" + recipientID + "?message=";
 
                       directMessage(recipientID,emergencyMsg, (res) => {
                         return callback(null,response);
