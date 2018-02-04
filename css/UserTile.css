@@ -60,8 +60,8 @@
 .user-name > span:nth-child(1) {
     margin-left: 40px;
 }
-.user-name > span:nth-child(3) {
-    margin-left: 40px;
+.user-name > span:nth-child(2) {
+    width: 200px;
 }
 .user-name > span:nth-child(even) {
     font-weight: 400;

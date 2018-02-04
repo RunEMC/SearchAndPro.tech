@@ -1,0 +1,69 @@
+.user-search {
+    position: relative;
+    width: calc(100% - 20px);
+    height: 60px;
+    left: 10px;
+    /* top: 10px; */
+    margin-top: 10px;
+
+    background-color: #eeeeee;
+    box-shadow: 0 0 5px -5px #696969;
+    border-radius: 3px;
+
+    font-family: 'lato', Arial, Helvetica, sans-serif;
+    color: #444444;
+    font-size: 1.2em;
+
+    overflow: hidden;
+}
+#name-form {
+    height: 100%;
+    width: 100%;
+}
+#name-input {
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 24px;
+
+    background-color: #eeeeee;
+
+    height: 100%;
+    width: calc(100% - 224px);
+
+    font-family: 'lato', Arial, Helvetica, sans-serif;
+    font-size: 1.15em;
+    font-weight: 300;
+}
+#name-submit {
+    position: relative;
+    display: block;
+    float: left;
+
+    background-color: #444444;
+    color: #dddddd;
+
+    height: 100%;
+    width: 200px;
+
+    font-family: 'lato', Arial, Helvetica, sans-serif;
+    font-size: 1.15em;
+    font-weight: 400;
+}
+
+/* ========== User panel ========= */
+
+.user-panel {
+    position: absolute;
+    display: block;
+    top: 20px;
+    right: 20px;
+    height: calc(100% - 40px);
+    width: 400px;
+
+    border-radius: 3px;
+    background-color: white;
+}
+.hidden-panel {
+    visibility: hidden;
+}

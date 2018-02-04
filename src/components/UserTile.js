@@ -4,6 +4,13 @@ export default class UserTile extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.props.updateUser(this.props.user.username);
+        this.props.togglePanel(true);
     }
 
     render() {
@@ -15,7 +22,7 @@ export default class UserTile extends React.Component {
         if (user.risk > 80) risk = "high";
 
         return (
-            <div className="user-tile">
+            <div className="user-tile" onClick={this.handleClick}>
                 <div className={'user-risk ' + risk}>{user.risk}</div>
                 <div className={'user-name ' + risk}><span>Username:  </span><span>{user.username}</span><span>User ID:  </span><span>{user._id}</span></div>
             </div>
