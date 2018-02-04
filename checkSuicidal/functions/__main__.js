@@ -19,6 +19,22 @@ const nlu = new NaturalLanguageUnderstandingV1({
   version_date: NaturalLanguageUnderstandingV1.VERSION_DATE_2017_02_27
 });
 
+// //For posting emergecny messages
+// const Poster = new postTweet({
+//   var client = new Twitter({
+//     consumer_key: process.env.consumer_key,
+//     consumer_secret: process.env.consumer_secret,
+//     access_token_key: process.env.PI_USERNAMEprocess.env.access_token_key,
+//     access_token_secret: process.env.access_token_secret
+//   });
+//
+// });
+
+//Pre-generated message
+const emergencyMsg = "If you feel like you need some help, send us a DM! We're here to talk."
+const emergencyLim = -0.5;
+var recipientID = "959877222038425600"; //Default value to be later overrided by a function
+
 
 //Pre-load before main function
 //Loads tweet information, returning and storing the an array of tweets
@@ -51,8 +67,6 @@ const nlu = new NaturalLanguageUnderstandingV1({
 //   ]);
 // };
 
-//https://hygzhu.lib.id/twitter-text@dev/?twitterHandle=sad_boie
-
 const loadTweets = (twitterHandle, callback) =>  lib.hygzhu['twitter-text']['@0.0.1']({name: twitterHandle}, function (err, result) {
   if (err) {
     return "fail"
@@ -60,6 +74,15 @@ const loadTweets = (twitterHandle, callback) =>  lib.hygzhu['twitter-text']['@0.
 
   return callback(result);
 });
+
+const directMessage = (twitterID, message, callback) =>  lib.hygzhu['twitter-message']['@0.0.0']({twitterID: twitterID, message:message},
+  function (err, result) {
+    if (err) {
+      return "fail"
+    }
+
+    return callback(result);
+  });
 
 const mapLimit = require('async').mapLimit;
 
@@ -69,6 +92,7 @@ const mapLimit = require('async').mapLimit;
 * @returns {any}
 */
 module.exports = (twitterHandle, context, callback) => {
+
   loadTweets(twitterHandle, tweets => {
 
     //Gets sentiment analysis
@@ -95,7 +119,7 @@ module.exports = (twitterHandle, context, callback) => {
       },
       (error, results) => {
         if (error) {
-          
+
           return {
             sentiment: 0,
             emotions: {
@@ -171,7 +195,33 @@ module.exports = (twitterHandle, context, callback) => {
 
               response["date"] = dd + '/' + mm + '/' + yyyy;
               response["time"] = today.getHours() + ':' + today.getMinutes() + ":" + today.getSeconds();
-              return callback(null, response);
+
+              //Trigger emergency message if threshold broken
+              //console.log("value: " + sums["sentiment"]);
+              if (sums["sentiment"] <= emergencyLim){
+                //Automated email
+                response["sentMessage"] = "true";
+                response["replyURL"] = "https://hygzhu.lib.id/twitter-message@0.0.0/?twitterID=" + recipientID + "?message=";
+
+                directMessage(recipientID,emergencyMsg, (res) => {
+                  return callback(null,response);
+                });
+
+                // lib[`${context.service.identifier}.getFollowers`](twitterHandle).then(res => {
+                //       return callback(null, res);
+                //   });
+
+
+                // lib[`${context.service.identifier}.postTweet`](finalMsg, twitterHandle).then(res => {
+                //       return callback(null, res);
+                //   });
+
+
+              }
+              else {
+                console.log("No threshold broken.")
+                return callback(null, response);
+              }
             }
           }
         );
