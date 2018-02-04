@@ -1,5 +1,9 @@
 /* ========== Analysis tiles */
 
+.all-traits {
+    width: 100%;
+    padding-top: 35px;
+}
 .trait-wall {
     position: relative;
     display: block;
@@ -8,34 +12,42 @@
     width: 33.3333333333%;
 }
 .trait-wall > h5 {
-    padding-left: 6px;
+    font-size: 1.1em;
+    padding-left: 9px;
 }
 .trait-tile {
     position: relative;
     display: block;
-    height: 24px;
+    height: 31px;
 
-    padding-left: 6px;
+    padding-left: 9px;
 
     font-family: 'lato', Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 1.1em;
     font-weight: 300;
-    line-height: 24px;
+    line-height: 31px;
 }
 .trait-tile > span {
     display: block;
     float: left;
 }
 .trait-tile > span:nth-child(1) {
-    width: 160px;
+    width: 170px;
 }
-
+.trait-tile > span:nth-child(2) {
+    display: block;
+    float: right;
+    padding-right: 5px;
+}
+.trait-parent > .trait-tile > span:nth-child(1) {
+    text-decoration: underline;
+}
 .trait-children {
     height: auto;
     padding-left: 10px;
 }
 .trait-children > .trait-tile > span:nth-child(1) {
-    width: 150px;
+    width: 160px;
 }
 .hidden-children {
     visibility: hidden;

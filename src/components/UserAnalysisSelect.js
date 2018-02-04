@@ -18,7 +18,7 @@ export default class UserAnalysisSelect extends React.Component {
 
     handleSubmit(event) {
         this.props.updateUser(this.state.requestName);
-        this.props.togglePanel(true);
+        console.log(this.state.requestName);
         event.preventDefault();
     }
 

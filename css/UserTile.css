@@ -1,11 +1,18 @@
-.user-tile {
+.all-user-tiles {
     position: relative;
     width: calc(50% - 15px);
+    height: calc(100% - 80px);
+    overflow-y: scroll;
+    margin-left: 10px;
+}
+.user-tile {
+    position: relative;
+    width: calc(100% - 10px);
     height: 60px;
-    left: 10px;
+    /* left: 10px; */
     /* top: 10px; */
     margin-top: 10px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
 
     background-color: #eeeeee;
     box-shadow: 0 0 5px -5px #696969;
@@ -61,7 +68,8 @@
 }
 .user-name > span:nth-child(2) {
     width: 200px;
-}
-.user-name > span:nth-child(even) {
     font-weight: 400;
+}
+.user-name > span:nth-child(4) {
+    width: 70px;
 }

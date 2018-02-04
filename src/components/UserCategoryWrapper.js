@@ -12,24 +12,24 @@ export default class UserCategoryWrapper extends React.Component {
 
     render() {
         var riskComp = (a,b) => {
-            if (a.risk < b.risk)
-              return 1;
-            if (a.risk > b.risk)
+            if (a.sentiment.sentiment < b.sentiment.sentiment)
               return -1;
+            if (a.sentiment.sentiment > b.sentiment.sentiment)
+              return 1;
             return 0;
         }
 
         var sortedUsers = this.props.users.sort(riskComp);
-        // console.log(sortedUsers);
+        console.log(sortedUsers);
 
         var userTiles = sortedUsers.map((user, index) =>
-            <UserTile user={user} key={index} updateUser={this.props.updateUser} togglePanel={this.props.togglePanel}/>
+            <UserTile user={user} key={index} updateUser={this.props.updateUser}/>
         );
 
-        console.log(userTiles);
+        //console.log(userTiles);
 
         return (
-            <div>
+            <div className="all-user-tiles">
                 {userTiles}
             </div>
         )
