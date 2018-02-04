@@ -1,0 +1,22 @@
+{
+  "name": "twitter-message",
+  "version": "0.0.0",
+  "description": "Generates tweets based on given Twitter handles",
+  "author": "hygzhu <hygzhu@gmail.com>",
+  "main": "functions/__main__.js",
+  "dependencies": {
+    "twit": "^2.2.9"
+  },
+  "private": true,
+  "stdlib": {
+    "build": "faaslang",
+    "name": "hygzhu/twitter-message",
+    "timeout": 10000,
+    "publish": true,
+    "personalize": {
+      "keys": [],
+      "user": []
+    },
+    "source": "@steve/twitter-markov-chain/0.0.0"
+  }
+}
