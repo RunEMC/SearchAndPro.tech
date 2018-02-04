@@ -1,6 +1,6 @@
 {
   "name": "twitter-text",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Generates tweets based on given Twitter handles",
   "author": "hygzhu <hygzhu@gmail.com>",
   "main": "functions/__main__.js",
