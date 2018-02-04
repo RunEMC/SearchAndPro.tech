@@ -1,4 +1,4 @@
-
+const lib = require('lib');
 //Define functions being used in main processor
 
 //Pre-define requests
@@ -19,27 +19,47 @@ const nlu = new NaturalLanguageUnderstandingV1({
   version_date: NaturalLanguageUnderstandingV1.VERSION_DATE_2017_02_27
 });
 
+
 //Pre-load before main function
 //Loads tweet information, returning and storing the an array of tweets
-const loadTweets = (twitterHandle, callback) => {
-  // TODO: CAll twitter API to load twelets from the given handle.
-  // TODO: Callback will accept the list of tweets.
+// const loadTweets = (twitterHandle, callback) => {
+//   // TODO: CAll twitter API to load twelets from the given handle.
+//   // TODO: Callback will accept the list of tweets.
+//
+//   callback([
+//     "I don't have too many friends - and I find that I'm keeping to myself a lot. My friends would always rag on me for complaining too much...I feel like I don't get enjoyment out of anything I do anymore - I feel like I'm just looking to kill time before the next 'thing' happens.",
+//     "I only knew a couple people in my city and I spent most weekends sitting on my computer alone and upset basically killing time waiting for the weekend to end.  I find myself not really disinterested or completely interested in my current courses.",
+//     "Not really sure what to say - I'm an upper year student and I've honestly never been this depressed before. If I could describe my mood as a colour - it would be grey. When I was on coop I was pretty depressed.",
+//     "To make everything worse, my parents are pressuring me to get a girlfriend since I'm 21. It seems every girl I talk to rejects me :( Does anyone else feel this way?",
+//     "I thought my self-esteem would go up but it also didn't. At last I thought getting a cali job would make everything alright so I busted my butt on side-projects. I finally made cali but I still feel there's something missing. I don't know how to feel happy",
+//     "Just feeling sad/ down every day. Was going to do an exchange term which would be close home but due to my poor planning, I withdrew my app last min. Feeling very regretful and sad about that...idk what in the future to look forward to :(",
+//     "This term hasn’t been going well. Had a really good coop term in the summer but coming back to loo just made me feel extremely depressed. Can’t concentrate on doing work.... feeling very worries/anxious about the unknown in the future. Feeling homesick.",
+//     "Pretty much experienced most of the symptoms(could include netflix all day and night) I guess I felt this way is because I haven't made a lot of friends in uni and my relationship with my parents isn't the best back home so felt alone.",
+//     "first year, first term was the worst. repetitive mundane schedule of going to lectures, coming back and reading notes that I don't even understand, crying every night, not fake smiles and show of strength, eating, constantly wonder why I'm here.",
+//     "The term was literally a living nightmare. I would stay inside all the time, never leave my house, stare at the wall, stay in the bed, wonder why I can't do things like everybody else can. Failed the entire term, lost 15 lbs and then gained 15 extra pounds.",
+//     "The big thing was that I kept up with work, with school, not because I wanted to, but because it was just 'something I did'. I never actually had any real motivation to do anything.",
+//     "I was almost catatonic. Every day was formulaic. I would go to class, take notes, go home, do homework, then stare at a wall for a couple hours. I was so alone that all I could ever think about was having friends.",
+//     "Did all assignments, attended all classes, didn't play video games or talk to anyone.\nWake up immediately upon morning alarm, wonder why I am such trash.\nGo to school, wait for traffic light, watch people walk by, wonder why I am such trash.",
+//     "I did decent on midterms, despite feeling depressed, and this made me believe that I can finish the term successfully. However, recently, I just want to sleep, and stay in my room. I haven't seen a doctor regarding my depression, and plan to soon.",
+//     "Since last term, I noticed my mood getting worse for no particular reason. Didn't pay much attention it. I started this term with a really weird passively irritating feeling in the back of my head. Almost like a bad emotional itch I can't scratch.",
+//     "CS is as dead and asocial as they say. Nobody talks much in class. It's a world apart from the spirit and community in engineering.",
+//     "I'm really upset no one appreciates me, everyone makes fun out of my username. and everyone act like they love me. no I'm not seeking attention I just want to be appreciated and loved by people and I want to feel picked once. is it too much to ask for love?",
+//     "so lonely",
+//     "nobody understands me",
+//     "I hate my life...",
+//     "this sucks"
+//   ]);
+// };
 
-  callback([
-    'It is an interview from CNTV (The web-based TV broadcaster of CCTV). Any volunteers help me to translate the subtitles into English. 😀',
-    'Can we add a few things to this list? Youre not cool because you: Put rims on your car that is a POS Have multiple cars broken down around your apartment because they are projects  Dress like you got released from the pen yesterday   Walk around looking like someone just murdered your entire family Drive like every day is the Daytona 500 Former Technical Expert of Baidu and Meituan Edison Wu Joins #TRON, who is mainly responsible for smart contract development with 11 years experience in enterprise software. #TRX $TRX. Can we add a few things to this list?',
-    'Seriously done with weed being a default pleasure. I live in CA, so this has been, and is recently a daily issue with current new recreational legalization. I m fine with the fact that it helps some people, but can we please talk about how it is a nightmare drug for some other people? I was on an OKCupid first-date once, and the girl smoked weed half way into our date, in the middle of the restaurant. She told me I must have psychological problems if I don t enjoy smoking. I don t enjoy smoking because it makes me anti-social and anxious. It s an incredibly uncomfortable experience. I have to have an enormous amount of trust and comfort with the people around me in order to enjoy smoking weed with them. And I am mystified by how marijuana seems to be a panacea and a social drug for so many others. I would prefer that people stop up-talking MJ and trying to push different strains on me. People be like,  Oh, you just need to try a different strain.  No, man, all strains make me',
-    'wrap myself into a blanket, disappear into my closet, and regret all of my life choices. No one wants to be in that headspace at a party or on a date.',
-    'It is an interview from CNTV (The web-based TV broadcaster of CCTV). Any volunteers help me to translate the subtitles into English. 😀',
-    'Can we add a few things to this list? Youre not cool because you: Put rims on your car that is a POS Have multiple cars broken down around your apartment because they are projects  Dress like you got released from the pen yesterday   Walk around looking like someone just murdered your entire family Drive like every day is the Daytona 500 Former Technical Expert of Baidu and Meituan Edison Wu Joins #TRON, who is mainly responsible for smart contract development with 11 years experience in enterprise software. #TRX $TRX. Can we add a few things to this list?',
-    'Seriously done with weed being a default pleasure. I live in CA, so this has been, and is recently a daily issue with current new recreational legalization. I m fine with the fact that it helps some people, but can we please talk about how it is a nightmare drug for some other people? I was on an OKCupid first-date once, and the girl smoked weed half way into our date, in the middle of the restaurant. She told me I must have psychological problems if I don t enjoy smoking. I don t enjoy smoking because it makes me anti-social and anxious. It s an incredibly uncomfortable experience. I have to have an enormous amount of trust and comfort with the people around me in order to enjoy smoking weed with them. And I am mystified by how marijuana seems to be a panacea and a social drug for so many others. I would prefer that people stop up-talking MJ and trying to push different strains on me. People be like,  Oh, you just need to try a different strain.  No, man, all strains make me',
-    'wrap myself into a blanket, disappear into my closet, and regret all of my life choices. No one wants to be in that headspace at a party or on a date.',
-    'It is an interview from CNTV (The web-based TV broadcaster of CCTV). Any volunteers help me to translate the subtitles into English. 😀',
-    'Can we add a few things to this list? Youre not cool because you: Put rims on your car that is a POS Have multiple cars broken down around your apartment because they are projects  Dress like you got released from the pen yesterday   Walk around looking like someone just murdered your entire family Drive like every day is the Daytona 500 Former Technical Expert of Baidu and Meituan Edison Wu Joins #TRON, who is mainly responsible for smart contract development with 11 years experience in enterprise software. #TRX $TRX. Can we add a few things to this list?',
-    'Seriously done with weed being a default pleasure. I live in CA, so this has been, and is recently a daily issue with current new recreational legalization. I m fine with the fact that it helps some people, but can we please talk about how it is a nightmare drug for some other people? I was on an OKCupid first-date once, and the girl smoked weed half way into our date, in the middle of the restaurant. She told me I must have psychological problems if I don t enjoy smoking. I don t enjoy smoking because it makes me anti-social and anxious. It s an incredibly uncomfortable experience. I have to have an enormous amount of trust and comfort with the people around me in order to enjoy smoking weed with them. And I am mystified by how marijuana seems to be a panacea and a social drug for so many others. I would prefer that people stop up-talking MJ and trying to push different strains on me. People be like,  Oh, you just need to try a different strain.  No, man, all strains make me',
-    'wrap myself into a blanket, disappear into my closet, and regret all of my life choices. No one wants to be in that headspace at a party or on a date. Piece of shitl. Lol.'
-  ]);
-};
+//https://hygzhu.lib.id/twitter-text@dev/?twitterHandle=sad_boie
+
+const loadTweets = (twitterHandle, callback) =>  lib.hygzhu['twitter-text']['@0.0.1']({name: twitterHandle}, function (err, result) {
+  if (err) {
+    return "fail"
+  }
+
+  return callback(result);
+});
 
 const mapLimit = require('async').mapLimit;
 
@@ -67,7 +87,6 @@ module.exports = (twitterHandle, context, callback) => {
           },
           (error, response) => {
             if (error) {
-              console.log(error);
               return done(null, {});
             }
             return done(null, response);
@@ -76,7 +95,17 @@ module.exports = (twitterHandle, context, callback) => {
       },
       (error, results) => {
         if (error) {
-          return callback(error);
+          
+          return {
+            sentiment: 0,
+            emotions: {
+              sadness: 0,
+              joy: 0,
+              fear: 0,
+              disgust: 0,
+              anger: 0
+            }
+          };
         }
 
         let sentimentCount = 0;
@@ -140,7 +169,8 @@ module.exports = (twitterHandle, context, callback) => {
                 mm='0'+mm;
               }
 
-              response["timestamp"] = dd+'/'+mm+'/'+yyyy;;
+              response["date"] = dd + '/' + mm + '/' + yyyy;
+              response["time"] = today.getHours() + ':' + today.getMinutes() + ":" + today.getSeconds();
               return callback(null, response);
             }
           }
