@@ -1,9 +1,10 @@
 {
   "name": "check-suicidal",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "author": "searchandprotech <therowforce@gmail.com>",
   "main": "functions/__main__.js",
   "dependencies": {
+    "lib": "^3.0.1",
     "watson-developer-cloud": "^3.0.5"
   },
   "private": true,
