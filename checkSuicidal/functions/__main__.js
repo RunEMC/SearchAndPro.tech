@@ -197,51 +197,58 @@ module.exports = (twitterHandle, context, callback) => {
               response["time"] = today.getHours() + ':' + today.getMinutes() + ":" + today.getSeconds();
               response["twitterHandle"] = twitterHandle;
 
-              nlu.analyze(
-                {
-                  text: tweets.join(' '),
-                  language: 'en-us',
-                  features: {
-                    'keywords': {
-                       'sentiment': true,
-                       'limit': 3
-                     }
+              lib[`${context.service.identifier}.getID`](twitterHandle).then(res => {
+                recipientID = res["data"]["id_str"];
+                response["twitterID"] = recipientID;
+                response["profilePic"] = res["data"]["profile_image_url"];
+                response["replyURL"] = "https://hygzhu.lib.id/twitter-message@0.0.0/?twitterID=" + recipientID + "?message=";
+
+                nlu.analyze(
+                  {
+                    text: tweets.join(' '),
+                    language: 'en-us',
+                    features: {
+                      'keywords': {
+                         'sentiment': true,
+                         'limit': 3
+                       }
+                    }
+                  },
+                  (err, resp) => {
+                    if (err) {
+
+                    }
+                    response["categories"] = resp;
+
+                    //Trigger emergency message if threshold broken
+                    //console.log("value: " + sums["sentiment"]);
+                    if (sums["sentiment"] <= emergencyLim){
+                      //Automated email
+                      response["sentMessage"] = "true";
+
+                      directMessage(recipientID,emergencyMsg, (res) => {
+                        return callback(null,response);
+                      });
+
+                      // lib[`${context.service.identifier}.getFollowers`](twitterHandle).then(res => {
+                      //       return callback(null, res);
+                      //   });
+
+
+                      // lib[`${context.service.identifier}.postTweet`](finalMsg, twitterHandle).then(res => {
+                      //       return callback(null, res);
+                      //   });
+
+
+                    }
+                    else {
+                      console.log("No threshold broken.")
+                      return callback(null, response);
+                    }
                   }
-                },
-                (err, resp) => {
-                  if (err) {
+                );
+              }); //End of nlu
 
-                  }
-                  response["categories"] = resp;
-
-                  //Trigger emergency message if threshold broken
-                  //console.log("value: " + sums["sentiment"]);
-                  if (sums["sentiment"] <= emergencyLim){
-                    //Automated email
-                    response["sentMessage"] = "true";
-                    response["replyURL"] = "https://hygzhu.lib.id/twitter-message@0.0.0/?twitterID=" + recipientID + "?message=";
-
-                    directMessage(recipientID,emergencyMsg, (res) => {
-                      return callback(null,response);
-                    });
-
-                    // lib[`${context.service.identifier}.getFollowers`](twitterHandle).then(res => {
-                    //       return callback(null, res);
-                    //   });
-
-
-                    // lib[`${context.service.identifier}.postTweet`](finalMsg, twitterHandle).then(res => {
-                    //       return callback(null, res);
-                    //   });
-
-
-                  }
-                  else {
-                    console.log("No threshold broken.")
-                    return callback(null, response);
-                  }
-                }
-              );
             }
           }
         );
