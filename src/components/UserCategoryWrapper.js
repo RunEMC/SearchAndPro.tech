@@ -7,12 +7,6 @@ export default class UserCategoryWrapper extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            users : [
-                {"username" : "tetsuo", "risk" : 95, "_id" : 124623475356 },
-                {"username" : "sadboy", "risk" : 90, "_id" : 124623475356 },
-                {"username" : "loserman", "risk" : 65, "_id" : 124623475356 },
-                {"username" : "dfasd", "risk" : 35, "_id" : 124623475356 }
-            ]
         };
     }
 
@@ -25,7 +19,7 @@ export default class UserCategoryWrapper extends React.Component {
             return 0;
         }
 
-        var sortedUsers = this.state.users.sort(riskComp);
+        var sortedUsers = this.props.users.sort(riskComp);
         // console.log(sortedUsers);
 
         var userTiles = sortedUsers.map((user, index) =>

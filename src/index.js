@@ -27,11 +27,11 @@ https.get("https://searchandprotech.lib.id/checkSuicidal@0.0.0/?twitterHandle=" 
 
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
-    console.log("Data from resp: " + data);
+    //console.log("Data from resp: " + data);
   });
 
 }).on("error", (err) => {
-  console.log("Error: " + err.message);
+  //console.log("Error: " + err.message);
 });
 //End HTTP stdlib request
 

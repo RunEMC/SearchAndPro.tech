@@ -1,0 +1,44 @@
+/* ========== Analysis tiles */
+
+.trait-wall {
+    position: relative;
+    display: block;
+    float: left;
+
+    width: 33.3333333333%;
+}
+.trait-wall > h5 {
+    padding-left: 6px;
+}
+.trait-tile {
+    position: relative;
+    display: block;
+    height: 24px;
+
+    padding-left: 6px;
+
+    font-family: 'lato', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+}
+.trait-tile > span {
+    display: block;
+    float: left;
+}
+.trait-tile > span:nth-child(1) {
+    width: 160px;
+}
+
+.trait-children {
+    height: auto;
+    padding-left: 10px;
+}
+.trait-children > .trait-tile > span:nth-child(1) {
+    width: 150px;
+}
+.hidden-children {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}

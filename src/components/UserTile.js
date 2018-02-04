@@ -24,7 +24,7 @@ export default class UserTile extends React.Component {
         return (
             <div className="user-tile" onClick={this.handleClick}>
                 <div className={'user-risk ' + risk}>{user.risk}</div>
-                <div className={'user-name ' + risk}><span>Username:  </span><span>{user.username}</span><span>User ID:  </span><span>{user._id}</span></div>
+                <div className={'user-name '}><span>Username:  </span><span>{user.username}</span><span>User ID:  </span><span>{user._id}</span></div>
             </div>
         )
     }

@@ -8,7 +8,8 @@ module.exports = {
     './css/UserWrap.css',
     './css/global.css',
     './css/SingleUserPanel.css',
-    './css/UserTile.css'
+    './css/UserTile.css',
+    './css/Traits.css'
   ],
   module: {
     rules: [
