@@ -48,7 +48,7 @@ export default class AllUserWrapper extends React.Component {
     getUserAnalysis(username) {
         if (username) {
             request
-                .get('https://searchandprotech.lib.id/checkSuicidal@0.0.7/')
+                .get('https://searchandprotech.lib.id/checkSuicidal/')
                 .query('twitterHandle=' + username)
                 .accept('json')
                 .then((res) => {

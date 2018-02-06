@@ -32,7 +32,7 @@ export default class SingleUserPanel extends React.Component {
 
     getUserAnalysis(username) {
         request
-            .get('https://searchandprotech.lib.id/checkSuicidal@0.0.7/')
+            .get('https://searchandprotech.lib.id/checkSuicidal/')
             .query('twitterHandle=' + username)
             .accept('json')
             .then((res) => {
