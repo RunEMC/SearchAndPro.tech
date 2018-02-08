@@ -2,6 +2,7 @@
   "name": "searchandprotech",
   "version": "0.1.0",
   "description": "",
+  "start": "webpack-dev-server --hot",
   "main": "index.js",
   "scripts": {
     "build": "webpack -p",

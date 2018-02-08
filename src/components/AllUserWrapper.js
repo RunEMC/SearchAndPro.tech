@@ -17,13 +17,13 @@ export default class AllUserWrapper extends React.Component {
             usernames: [
                 "sad_boie",
                 "Canucks",
-                "RealDonaldTrump",
+                "RealDonaldTrump"
                 //"solaggytoday",
                 //"QuickyBaby",
-                "h3h3production"
+                //"h3h3production",
                 //"hilakleinh3",
-                //"kawanocy"
-                //"BrambossMC"
+                //"kawanocy",
+                //"BrambossMC",
                 //"CJSB__"
 
             ],

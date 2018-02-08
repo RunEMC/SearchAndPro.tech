@@ -9,7 +9,8 @@ module.exports = {
     './css/global.css',
     './css/SingleUserPanel.css',
     './css/UserTile.css',
-    './css/Traits.css'
+    './css/Traits.css',
+    './css/Header.css'
   ],
   module: {
     rules: [

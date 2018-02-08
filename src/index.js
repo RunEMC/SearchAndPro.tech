@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import AllUserWrapper from './components/AllUserWrapper.js';
+import Header from './components/Header.js';
 
 const title = 'My Minimal React Webpack Babel Setup';
 
 ReactDOM.render(
   <div>
+  <Header />
   <AllUserWrapper />
   </div>,
   document.getElementById('app')
@@ -17,7 +19,7 @@ const https = require('https');
 
 var twitterhandle = "Laggy";
 
-https.get("https://searchandprotech.lib.id/checkSuicidal@0.0.0/?twitterHandle=" + twitterhandle, (resp) => {
+https.get("https://searchandprotech.lib.id/checkSuicidal/?twitterHandle=" + twitterhandle, (resp) => {
   let data = '';
 
   // A chunk of data has been recieved.

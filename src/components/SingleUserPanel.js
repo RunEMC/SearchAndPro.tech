@@ -8,6 +8,7 @@ import ParentTrait from './ParentTrait.js';
 import ChildTrait from './ChildTrait.js';
 import { isNull } from 'util';
 
+
 export default class SingleUserPanel extends React.Component {
     constructor(props) {
         super(props);
