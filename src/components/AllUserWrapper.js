@@ -18,13 +18,13 @@ export default class AllUserWrapper extends React.Component {
                 "sad_boie",
                 "Canucks",
                 "RealDonaldTrump",
-                "solaggytoday",
-                "QuickyBaby",
-                "h3h3production",
-                "hilakleinh3",
-                "kawanocy",
-                "BrambossMC",
-                "CJSB__"
+                //"solaggytoday",
+                //"QuickyBaby",
+                "h3h3production"
+                //"hilakleinh3",
+                //"kawanocy"
+                //"BrambossMC"
+                //"CJSB__"
 
             ],
             users: [
